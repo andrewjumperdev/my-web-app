@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
+import Nav from "../layout/Nav";
+import Footer from "../layout/Footer";
 
 const Projects = () => {
   return (
@@ -19,12 +19,23 @@ const Projects = () => {
                 <div class="card-body p-0">
                   <div class="d-flex align-items-center">
                     <div class="p-5">
-                      <h2 class="fw-bolder">Project Name 1</h2>
+                      <h2 class="fw-bolder">Site e-commerce Kanap </h2>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Eius at enim eum illum aperiam placeat esse? Mollitia
-                        omnis minima saepe recusandae libero, iste ad
-                        asperiores! Explicabo commodi quo itaque! Ipsam!
+                      L’application web sera composée de 4 pages : <br/>
+                      ● Une page d’accueil montrant (de manière dynamique) tous les articles disponibles à
+                      la vente. <br/>
+                      ● Une page “produit” qui affiche (de manière dynamique) les détails du produit sur
+                      lequel l'utilisateur a cliqué depuis la page d’accueil. Depuis cette page, l’utilisateur
+                      peut sélectionner une quantité, une couleur, et ajouter le produit à son panier. <br/>
+                      ● Une page “panier”. Celle-ci contient plusieurs parties : <br/>
+                      ○ Un résumé des produits dans le panier, le prix total et la possibilité de
+                      modifier la quantité d’un produit sélectionné ou bien de supprimer celui-ci.<br/>
+                      ○ Un formulaire permettant de passer une commande. Les données du
+                      formulaire doivent être correctes et bien formatées avant d'être renvoyées au
+                      back-end. Par exemple, pas de chiffre dans un champ prénom.<br/>
+                      ● Une page “confirmation” :<br/> 
+                      ○ Un message de confirmation de commande, remerciant l'utilisateur pour sa
+                      commande, et indiquant l'identifiant de commande envoyé par l’API. <br/>
                       </p>
                     </div>
                     <img
@@ -40,12 +51,13 @@ const Projects = () => {
                 <div class="card-body p-0">
                   <div class="d-flex align-items-center">
                     <div class="p-5">
-                      <h2 class="fw-bolder">Project Name 2</h2>
+                      <h2 class="fw-bolder">API</h2>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Eius at enim eum illum aperiam placeat esse? Mollitia
-                        omnis minima saepe recusandae libero, iste ad
-                        asperiores! Explicabo commodi quo itaque! Ipsam!
+                      Contexte du projet <br />
+                      Piiquante se dédie à la création de sauces épicées dont les recettes sont gardées
+                      secrètes. Pour tirer parti de son succès et générer davantage de buzz, l'entreprise
+                      souhaite créer une application web dans laquelle les utilisateurs peuvent ajouter
+                      leurs sauces préférées et liker ou disliker les sauces ajoutées par les autres.
                       </p>
                     </div>
                     <img

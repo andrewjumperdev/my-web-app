@@ -1,7 +1,11 @@
 import React from "react";
+import Nav from "../layout/Nav";
+import Footer from "../layout/Footer";
 
 const Contact = () => {
   return (
+    <>
+    <Nav />
     <section class="py-5">
       <div class="container px-5">
         <div class="bg-light rounded-4 py-5 px-4 px-md-5">
@@ -118,6 +122,8 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    <Footer />
+    </>
   );
 };
 

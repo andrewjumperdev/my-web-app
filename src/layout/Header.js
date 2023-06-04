@@ -1,10 +1,8 @@
 import React from "react";
-import Nav from "../components/Nav";
 
 const Header = () => {
   return (
     <>
-      <Nav />
       <header class="py-5">
         <div class="container px-5 pb-5">
           <div class="row gx-5 align-items-center">
@@ -36,9 +34,11 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div class="col-xxl-7">
+            <div class="col-xxl-6">
               <div class="d-flex justify-content-center mt-5 mt-xxl-0">
-                <div class="profile bg-gradient-primary-to-secondary"></div>
+                <div class="profile bg-gradient-primary-to-secondary overflow-hidden">
+                  <img src="./img/Foto.png" className="img-fluid" />
+                </div>
               </div>
             </div>
           </div>
