@@ -11709,8 +11709,8 @@ html {
 }
 @media (min-width: 1200px) {
   .profile {
-    height: 35vw;
-    width: 35vw;
+    height: 20vw;
+    width: 20vw;
   }
   .profile .profile-img {
     height: 40vw;
