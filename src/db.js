@@ -13,8 +13,9 @@ export const projects = [
       back-end. Par exemple, pas de chiffre dans un champ prénom.
       Une page “confirmation”;Un message de confirmation de commande, remerciant l'utilisateur pour sa
       commande, et indiquant l'identifiant de commande envoyé par l’API.`,
-      thumbnail: "./Kanap.png",
-      urlProject: "",
+      thumbnail: "/assets/Kanap.png",
+      urlProject: "https://andrewjumperdev.github.io/Kanap/",
+      repository: "https://github.com/andrewjumperdev/Kanap",
       mainTools: ['javascript', 'html', 'css'],
       technicalDetails: [
         {
@@ -58,7 +59,7 @@ export const projects = [
       id: 2,
       title: "Piiquante API",
       description: `Piiquante est une application web dédiée à la création de sauces épicées avec des recettes secrètes. Son objectif est de générer plus de buzz en permettant aux utilisateurs d'ajouter leurs sauces préférées et de liker ou disliker les sauces ajoutées par d'autres. L'application propose des fonctionnalités telles que l'authentification des utilisateurs, la visualisation des sauces existantes, l'ajout de nouvelles sauces avec des images, la mise à jour des sauces existantes, ainsi que la possibilité de liker et disliker les sauces. Les mots de passe des utilisateurs sont sécurisés grâce à un hachage, et l'accès aux routes de sauce requiert une authentification appropriée. Les adresses électroniques sont uniques pour assurer l'unicité des utilisateurs, et les erreurs de base de données sont gérées grâce à un plugin Mongoose. Le projet est sous licence MIT, encourage les contributions et respecte les normes de sécurité actuelles.`,
-      thumbnail: "./piiquante.png",
+      thumbnail: "/assets/piiquante.png",
       urlProject: "",
       mainTools: ['javascript', 'expressjs', 'mongodb', 'jwt'],
       technicalDetails: [
@@ -112,7 +113,7 @@ export const projects = [
       Général :
       
       Absence d'erreurs ou de warnings: Le code final ne doit pas produire d'erreurs ou de warnings dans la console du navigateur, garantissant ainsi une application robuste et stable.`,
-      thumbnail: "./Kasa.png",
+      thumbnail: "/assets/Kasa.png",
     },
     {
       id: 4,
@@ -135,6 +136,6 @@ export const projects = [
       
       Le script utilise yagmail pour envoyer un rapport par e-mail. Pour cela, une adresse e-mail et un mot de passe valides sont requis pour accéder au service SMTP. Le rapport envoyé par e-mail contient la liste des liens invalides récupérés à partir du fichier CSV.
       Ce web scraper est utile pour effectuer une vérification de la validité des liens sur une page web spécifique. Il peut être adapté et étendu pour d'autres cas d'utilisation similaires. Toutefois, veillez à respecter les conditions d'utilisation du site web que vous scrapez et évitez de surcharger le serveur avec des requêtes excessives.`,
-      thumbnail: "./python-ws.png",
+      thumbnail: "./assets/python-ws.png",
     },
   ];

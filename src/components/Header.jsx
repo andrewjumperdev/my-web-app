@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 
@@ -14,7 +15,6 @@ const Header = () => {
     };
     changeText(0);
   }, []);
-
 
   return (
       <header className="py-5">
@@ -34,18 +34,18 @@ const Header = () => {
                   </span>
                 </h1>
                 <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                  <a
+                  <Link
                     className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder"
-                    href="resume.html"
+                    to="/resume"
                   >
                     Resume
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder"
-                    href="projects.html"
+                    to="/projects"
                   >
                     Projects
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -107,9 +107,12 @@
   .container__text .text {
     font-size: 2rem;
   }
+
+  .bg-light.py-5 {
+    padding: 4rem !important;
+  }
 }
 
-/* Ajusta el tamaño del borde izquierdo y la animación */
 @media screen and (max-width: 576px) {
   .container__text .text {
     font-size: 1.2rem;
@@ -117,6 +120,53 @@
   }
   .text.sec-text::before {
     border-left: 1px solid #1e30f3;
-    animation-duration: 3s; /* Ajusta la duración de la animación para pantallas más pequeñas */
+    animation-duration: 3s; 
+  }
+
+  .container.px-5.my-5 {
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+
+  .card-body.p-5 {
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+
+  .col-lg-11.col-xl-9.col-xxl-8 {
+    width: 320px;
+    margin: 0;
+  }
+
+  .row.justify-content-center {
+    margin: 0;
+  }
+
+  .d-flex.align-items-center.justify-content-between.mb-4 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bg-light.py-5 >.container.px-5 {
+    padding: 0 !important;
+  }
+  section.py-5 > .container.mb-5 {
+    padding: 0 !important;
+  }
+
+  .col-sm-12.col-lg-12.col-xl-12.col-xxl-10.overflow-y-hidden {
+    padding: 8px !important;
+  }
+
+  .card-body.p-0 > .d-flex.align-items-center {
+    flex-direction: column;
+  }
+
+  .card-body.p-0 > .d-flex.align-items-center > .p-5 {
+    padding: 0 !important;
+  }
+
+  section.p-sm-0.md-py-5 > .container.px-5 {
+    padding: 8px !important;
   }
 }

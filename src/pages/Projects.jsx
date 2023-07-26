@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { projects } from "../db";
 
-const Projects = ({data}) => {
+const Projects = () => {
   const [showFullText, setShowFullText] = useState(false);
 
+  useEffect(() => {
+    return () => {
+      setShowFullText(false)
+    };
+  }, []);
   return (
     <div>
       <section className="py-5">
@@ -14,8 +20,8 @@ const Projects = ({data}) => {
             </h1>
           </div>
           <div className="row gx-5 justify-content-center">
-            <div className="col-lg-12 col-xl-12 col-xxl-10  overflow-y-hidden">
-              {data.map((item, index) => (
+            <div className="col-sm-12 col-lg-12 col-xl-12 col-xxl-10 overflow-y-hidden">
+              {projects.map((item, index) => (
                 <div key={index} className="card shadow rounded-4 border-0 mb-5">
                   <div className="card-body p-0">
                     <div className="d-flex align-items-center">
@@ -24,13 +30,8 @@ const Projects = ({data}) => {
                         <p>
                           {showFullText
                             ? item.description
-                            : item.description.slice(0, 300)}
-                          {item.description.length > 80 && !showFullText && (
-                            <span>
-                              ...{" "}
-                              <Link to={`/projects/${item.id}`}>Leer más</Link>
-                            </span>
-                          )}
+                            : item.description.slice(0, 300) + '...'
+                          }
                         </p>
                       </div>
                       <img
@@ -40,6 +41,7 @@ const Projects = ({data}) => {
                       />
                     </div>
                   </div>
+                  <Link className="btn btn-primary w-25" to={`/projects/${item.id}`} >Voir détails</Link>
                 </div>
               ))}
             </div>
@@ -55,7 +57,7 @@ const Projects = ({data}) => {
             </h2>
             <a
               className="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder"
-              href="contact.html"
+              href="/contact"
             >
               Contact me
             </a>

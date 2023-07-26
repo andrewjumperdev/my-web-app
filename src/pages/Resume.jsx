@@ -1,6 +1,4 @@
 import React from "react";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
 
 const Resume = () => {
   const handleDownload = () => {
@@ -22,7 +20,7 @@ const Resume = () => {
           <span className="text-gradient d-inline">Resume</span>
         </h1>
       </div>
-      <div className="row gx-5 justify-content-center">
+      <div className="row justify-content-center">
         <div className="col-lg-11 col-xl-9 col-xxl-8">
           <section>
             <div className="d-flex align-items-center justify-content-between mb-4">
@@ -212,7 +210,7 @@ const Resume = () => {
                     </div>
                     <div className="col">
                       <div className="d-flex align-items-center bg-light rounded-4 p-3 h-100">
-                        MongoDB,MySql et SQL
+                        MongoDB, MySql et SQL
                       </div>
                     </div>
                   </div>

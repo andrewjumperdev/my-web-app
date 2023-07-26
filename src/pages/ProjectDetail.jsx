@@ -1,10 +1,21 @@
 import React from "react";
 import { useParams } from "react-router";
+import { useNavigate } from "react-router-dom";
+import { projects } from "../db";
 
-const ProjectDetail = ({ data }) => {
-  console.log(data)
+const ProjectDetail = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
-  const item = data.find((project) => project.id == id);
+  const item = projects.find((project) => project.id === parseInt(id));
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
+  if (!item) {
+    return <div>Project not found</div>;
+  }
+
   return (
     <div className="container p-5 text-start">
       <div className="row">
@@ -56,6 +67,7 @@ const ProjectDetail = ({ data }) => {
           ))}
         </div>
       </div>
+      <button className="btn btn-primary" onClick={handleGoBack}>Back</button>
     </div>
   );
 };
