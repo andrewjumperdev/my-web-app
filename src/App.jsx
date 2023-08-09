@@ -14,9 +14,9 @@ import Spinner from "./components/Spinner";
 import About from "./pages/About";
 
 import { projects } from "./db";
+import PageNotFound404 from "./pages/404";
 
 function App() {
-
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -27,7 +27,7 @@ function App() {
       setLoading(false);
     }, 2000);
   }, []);
-  
+
   return (
     <>
       {loading ? (
@@ -35,8 +35,8 @@ function App() {
       ) : (
         <Routes>
           <Route
-            exact 
-            path="/"
+            exact
+            path="my-web-app/"
             element={
               <Layout>
                 <PageTransition>
@@ -46,7 +46,7 @@ function App() {
             }
           />
           <Route
-            path="/about"
+            path="my-web-app/about"
             element={
               <Layout>
                 <PageTransition>
@@ -56,7 +56,7 @@ function App() {
             }
           />
           <Route
-            path="/resume"
+            path="my-web-app/resume"
             element={
               <Layout>
                 <PageTransition>
@@ -66,7 +66,7 @@ function App() {
             }
           />
           <Route
-            path="/projects"
+            path="my-web-app/projects"
             element={
               <Layout>
                 <PageTransition>
@@ -76,7 +76,7 @@ function App() {
             }
           />
           <Route
-            path="/projects/:id"
+            path="my-web-app/projects/:id"
             element={
               <Layout>
                 <PageTransition>
@@ -86,7 +86,7 @@ function App() {
             }
           />
           <Route
-            path="/contact"
+            path="my-web-app/contact"
             element={
               <Layout>
                 <PageTransition>
@@ -95,6 +95,7 @@ function App() {
               </Layout>
             }
           />
+          <Route path="*" element={<PageNotFound404 />} />
         </Routes>
       )}
     </>

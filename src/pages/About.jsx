@@ -68,13 +68,13 @@ const About = () => {
                 pour contribuer au succès de projets web passionnants.
               </p>
               <div className="mt-4 d-flex justify-content-center fs-2 gap-4">
-                <a className="text-gradient" href="#!">
+                <a className="text-gradient" href="https://twitter.com/jumper_Develop" target="_blanc">
                   <i className="bi bi-twitter"></i>
                 </a>
-                <a className="text-gradient" href="#!">
+                <a className="text-gradient" href="https://www.linkedin.com/in/andrew-jumper/" target="_blanc">
                   <i className="bi bi-linkedin"></i>
                 </a>
-                <a className="text-gradient" href="#!">
+                <a className="text-gradient" href="https://github.com/andrewjumperdev" target="_blanc">
                   <i className="bi bi-github"></i>
                 </a>
               </div>

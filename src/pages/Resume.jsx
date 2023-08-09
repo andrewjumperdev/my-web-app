@@ -2,7 +2,7 @@ import React from "react";
 
 const Resume = () => {
   const handleDownload = () => {
-    const fileUrl = "./CV-Andrew Alfaro.pdf";
+    const fileUrl = "/my-web-app/CV-Andrew Alfaro.pdf";
     const link = document.createElement("a");
     link.href = fileUrl;
     link.download = "Andrew-Alfaro-CV.pdf";

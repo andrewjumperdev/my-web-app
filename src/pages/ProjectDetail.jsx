@@ -26,14 +26,14 @@ const ProjectDetail = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col">
-          <img src={item.img} alt="Portrait" />
+        <div className="col d-flex justify-content-center">
+          <img className="img-fluid" src={item.img} alt="Portrait" />
         </div>
       </div>
       <div className="row">
         <div className="col pb-2 border-bottom">
           <p className="py-3 px-2">{item.description}</p>
-          <a href={item.urlProject} className="btn btn-primary my-2">
+          <a href={item.urlProject} className="btn btn-primary my-2" target="_blanc">
             Voir project online{" "}
           </a>
         </div>
