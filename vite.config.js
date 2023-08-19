@@ -5,4 +5,5 @@ export default {
   server: {
     port: process.env.PORT || 3030,
   },
+  base: '/my-web-app/'
 }
