@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -36,13 +36,13 @@ const Header = () => {
                 <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
                   <Link
                     className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder"
-                    to="/my-web-app/resume"
+                    to="/resume"
                   >
                     Resume
                   </Link>
                   <Link
                     className="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder"
-                    to="/my-web-app/projects"
+                    to="/projects"
                   >
                     Projects
                   </Link>
@@ -52,7 +52,7 @@ const Header = () => {
             <div className="col-md-6 col-lg-5 col-sm-12">
               <div className="d-flex justify-content-center align-items-end mt-xxl-0">
                 <div className="profile bg-gradient-primary-to-secondary overflow-hidden d-flex align-items-end">
-                  <img src="/my-web-app/img/Foto.png" className="img-fluid" />
+                  <img src="/img/Foto.png" className="img-fluid" />
                 </div>
               </div>
             </div>

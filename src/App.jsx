@@ -36,7 +36,7 @@ function App() {
         <Routes>
           <Route
             exact
-            path="my-web-app/"
+            path="/"
             element={
               <Layout>
                 <PageTransition>
@@ -46,7 +46,7 @@ function App() {
             }
           />
           <Route
-            path="my-web-app/about"
+            path="/about"
             element={
               <Layout>
                 <PageTransition>
@@ -56,7 +56,7 @@ function App() {
             }
           />
           <Route
-            path="my-web-app/resume"
+            path="/resume"
             element={
               <Layout>
                 <PageTransition>
@@ -66,7 +66,7 @@ function App() {
             }
           />
           <Route
-            path="my-web-app/projects"
+            path="/projects"
             element={
               <Layout>
                 <PageTransition>
@@ -76,7 +76,7 @@ function App() {
             }
           />
           <Route
-            path="my-web-app/projects/:id"
+            path="/projects/:id"
             element={
               <Layout>
                 <PageTransition>
@@ -86,7 +86,7 @@ function App() {
             }
           />
           <Route
-            path="my-web-app/contact"
+            path="/contact"
             element={
               <Layout>
                 <PageTransition>

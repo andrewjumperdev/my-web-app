@@ -41,7 +41,7 @@ const Projects = () => {
                       />
                     </div>
                   </div>
-                  <Link className="btn btn-primary w-25" to={`/my-web-app/projects/${item.id}`} >Voir détails</Link>
+                  <Link className="btn btn-primary w-25" to={`/projects/${item.id}`} >Voir détails</Link>
                 </div>
               ))}
             </div>
@@ -57,7 +57,7 @@ const Projects = () => {
             </h2>
             <a
               className="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder"
-              href="/my-web-app/contact"
+              href="/contact"
             >
               Contact me
             </a>

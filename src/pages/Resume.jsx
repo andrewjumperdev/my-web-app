@@ -37,6 +37,36 @@ const Resume = () => {
 
             <div className="card shadow border-0 rounded-4 mb-5">
               <div className="card-body p-5">
+                <div className="row flex-nowrap  align-items-center gx-5">
+                  <div className="col text-center text-lg-start mb-4 mb-lg-0">
+                    <div className="bg-light p-4 rounded-4">
+                      <div className="text-primary fw-bolder mb-2">
+                        sept 4 2023 - aujourd’hui
+                      </div>
+                      <div className="small fw-bolder">
+                        Full Stack Developer
+                      </div>
+                      <div className="small text-muted">wanhaofrance.com</div>
+                      <div className="small text-muted">France, Paris</div>
+                    </div>
+                  </div>
+                  <div className="col-lg-8">
+                    <div>
+                      En tant que développeur Full Stack chez Wanhao France,
+                      je suis responsable de la maintenance et du développement
+                      front-end pour wanhaofrace.com, ainsi que du développement
+                      back-end pour les Smart-Pads Yumi. Je veille également
+                      à l'automatisation des processus administratifs,
+                      contribuant ainsi à l'efficacité opérationnelle
+                      de l'entreprise.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="card shadow border-0 rounded-4 mb-5">
+              <div className="card-body p-5">
                 <div className="row align-items-center gx-5">
                   <div className="col text-center text-lg-start mb-4 mb-lg-0">
                     <div className="bg-light p-4 rounded-4">
