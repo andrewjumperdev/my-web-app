@@ -11,7 +11,7 @@ const Projects = () => {
     };
   }, []);
   return (
-    <div>
+    <>
       <section className="py-5">
         <div className="container mb-5">
           <div className="text-center mb-5">
@@ -20,12 +20,12 @@ const Projects = () => {
             </h1>
           </div>
           <div className="row gx-5 justify-content-center">
-            <div className="col-sm-12 col-lg-12 col-xl-12 col-xxl-10 overflow-y-hidden">
               {projects.map((item, index) => (
+                <div className="col-sm-12 col-md-10 col-xl-9 col-xxl-8 overflow-y-hidden">
                 <div key={index} className="card shadow rounded-4 border-0 mb-5">
                   <div className="card-body p-0">
                     <div className="d-flex align-items-center">
-                      <div className="p-5">
+                      <div className="mt-5">
                         <h2 className="fw-bolder">{item.title}</h2>
                         <p>
                           {showFullText
@@ -35,16 +35,16 @@ const Projects = () => {
                         </p>
                       </div>
                       <img
-                        className="img-fluid"
+                        className="img-fluid my-2"
                         src={item.thumbnail}
                         alt="Project"
                       />
                     </div>
                   </div>
-                  <Link className="btn btn-primary w-25" to={`/projects/${item.id}`} >Voir détails</Link>
+                  <Link className="btn btn-primary" to={`/projects/${item.id}`} >Voir détails</Link>
+                </div>
                 </div>
               ))}
-            </div>
           </div>
         </div>
       </section>
@@ -64,7 +64,7 @@ const Projects = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
