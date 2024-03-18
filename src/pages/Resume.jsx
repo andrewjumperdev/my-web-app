@@ -1,4 +1,5 @@
 import React from "react";
+import ExperienceTimeline from "../components/ExpTimeline";
 
 const Resume = () => {
   const handleDownload = () => {
@@ -12,6 +13,43 @@ const Resume = () => {
 
     document.body.removeChild(link);
   };
+  const experiences = [
+    {
+      company: 'wanhaofrance.com',
+      title: 'Full Stack Developer',
+      date: 'sept 4 2023 - aujourd’hui',
+      location: "France, Paris",
+      description: `                      
+      En charge de la refonte et du développement de 5 e-commerces d’imprimantes 3D tels que wanhaofrance.com et 3d-expert.fr
+      Utilisation de HTML, CSS, JavaScript et Liquid pour développer les fonctionnalités et les interfaces des e-commerces
+      Construction d’un software de versionnement des fichiers de configuration des imprimantes 3D, en utilisant Raspberry Pi et Python
+      Conception d’un serveur avec Node.js et Express pour gérer et stocker des versions des fichiers de configuration, assurant ainsi un contrôle efficace des changements apportés aux éléments du système Raspberry Pi.`
+    },
+    {
+      company: 'Bobochic Paris',
+      title: 'Full Stack Developer',
+      date: 'juin 2022 - juin 2023',
+      location: "France, Paris",
+      description: `
+      Gestion des plateformes Lengow et Prestashop afin de mettre en ligne et synchroniser les produits Bobochic sur divers marketplace 
+      Construction et maintenance des scripts d'automatisation en utilisant JavaScript pour améliorer les processus internes de la gestion des stocks, des mises à jour des prix et des caractéristiques produits
+      Conception d’un webscraper avec Python pour analyser l’état des produits tels que le prix, la disponibilité des stocks et les caractéristiques
+      `
+    },
+    {
+      company: 'ANTIT',
+      title: 'Développeur Front-End',
+      date: '2021 - 2022',
+      location: "Costa Rica, San José",
+      description: `
+      Développement d’interfaces avec React et maintenance du site web
+      Structuration du contenu HTML, gestion de l'accessibilité des utilisateurs et maintenance d’une UI propre et simple d’utilisation
+      Exploitation des APIs pour afficher les données dans l’UI 
+      Adaptation du format du site web sur tous les dispositifs
+        `
+    },
+
+  ];
 
   return (
     <div className="container px-5 my-5">
@@ -25,7 +63,6 @@ const Resume = () => {
           <section>
             <div className="d-flex align-items-center justify-content-between mb-4">
               <h2 className="text-primary fw-bolder mb-0">Experience</h2>
-
               <button
                 className="btn btn-primary px-4 py-3"
                 onClick={handleDownload}
@@ -34,103 +71,10 @@ const Resume = () => {
                 Download Resume
               </button>
             </div>
-
-            <div className="card shadow border-0 rounded-4 mb-5">
-              <div className="card-body p-5">
-                <div className="row align-items-center gx-5">
-                  <div className="col text-center text-lg-start mb-4 mb-lg-0">
-                    <div className="bg-light p-4 rounded-4">
-                      <div className="text-primary fw-bolder mb-2">
-                        sept 4 2023 - aujourd’hui
-                      </div>
-                      <div className="small fw-bolder">
-                        Full Stack Developer
-                      </div>
-                      <div className="small text-muted">wanhaofrance.com</div>
-                      <div className="small text-muted">France, Paris</div>
-                    </div>
-                  </div>
-                  <div className="col-lg-8">
-                    <div>
-                      En tant que développeur Full Stack chez Wanhao France,
-                      je suis responsable de la maintenance et du développement
-                      front-end pour wanhaofrace.com, ainsi que du développement
-                      back-end pour les Smart-Pads Yumi. Je veille également
-                      à l'automatisation des processus administratifs,
-                      contribuant ainsi à l'efficacité opérationnelle
-                      de l'entreprise.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="card shadow border-0 rounded-4 mb-5">
-              <div className="card-body p-5">
-                <div className="row align-items-center gx-5">
-                  <div className="col text-center text-lg-start mb-4 mb-lg-0">
-                    <div className="bg-light p-4 rounded-4">
-                      <div className="text-primary fw-bolder mb-2">
-                        juin 2022 - juin 2023
-                      </div>
-                      <div className="small fw-bolder">
-                        Automatisation du Gestion de Flux Marketplace
-                      </div>
-                      <div className="small text-muted">Bobochic Paris</div>
-                      <div className="small text-muted">France, Paris</div>
-                    </div>
-                  </div>
-                  <div className="col-lg-8">
-                    <div>
-                      Responsable de la gestion des flux entre les places de
-                      marché, de la visibilité des produits, de l'activation des
-                      nouveaux produits, de la correction des erreurs, de la
-                      création d'une logique de gestion des attributs, des
-                      stratégies d'injection, de la maintenance et de la
-                      visualisation des flux.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="card shadow border-0 rounded-4 mb-5">
-              <div className="card-body p-5">
-                <div className="row align-items-center gx-5">
-                  <div className="col text-center text-lg-start mb-4 mb-lg-0">
-                    <div className="bg-light p-4 rounded-4">
-                      <div className="text-primary fw-bolder mb-2">2021</div>
-                      <div className="small fw-bolder">
-                        Développeur Front-End
-                      </div>
-                      <div className="small text-muted">ANTIT</div>
-                      <div className="small text-muted">
-                        Costa Rica, San José
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-8">
-                    <div>
-                      Développer la conception d'un site en code HTML et CSS
-                      vers les bibliothèques React et React Native. Structurer
-                      le contenu de manière sémantique, assurer l'accessibilité,
-                      contrôler les polices, les modèles, les formulaires de
-                      conception et l'interactivité. Programmer, modifier et
-                      maintenir un site web. Adapter la conception d'un site web
-                      à différents appareils et navigateurs, créer des outils
-                      qui améliorent l'interaction entre l'utilisateur et le
-                      web, utiliser des API pour connecter le web avec des
-                      services et des systèmes.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ExperienceTimeline experiences={experiences} />
           </section>
-
           <section>
             <h2 className="text-secondary fw-bolder mb-4">Education</h2>
-
             <div className="card shadow border-0 rounded-4 mb-5">
               <div className="card-body p-5">
                 <div className="row align-items-center gx-5">
@@ -194,7 +138,6 @@ const Resume = () => {
               </div>
             </div>
           </section>
-
           <div className="pb-5"></div>
           <section>
             <div className="card shadow border-0 rounded-4 mb-5">

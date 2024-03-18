@@ -15,6 +15,8 @@ import About from "./pages/About";
 
 import { projects } from "./db";
 import PageNotFound404 from "./pages/404";
+import TermsPage from "./pages/TermsPage";
+import PrivacyPage from "./pages/PrivacyPage";
 
 function App() {
   const [data, setData] = useState(null);
@@ -95,6 +97,25 @@ function App() {
               </Layout>
             }
           />
+          <Route
+            path="/terms"
+            element={
+              <Layout>
+                <PageTransition>
+                  <TermsPage />
+                </PageTransition>
+              </Layout>
+            }
+            component={TermsPage} />
+          <Route
+            path="/privacy"
+            element={
+              <Layout>
+                <PageTransition>
+                  <PrivacyPage />
+                </PageTransition>
+              </Layout>
+            } />
           <Route path="*" element={<PageNotFound404 />} />
         </Routes>
       )}

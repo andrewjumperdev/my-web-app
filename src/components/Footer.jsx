@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -11,17 +12,17 @@ const Footer = () => {
               </div>
             </div>
             <div className="col-auto">
-              <a className="small" href="#!">
+              <Link className="small" to="/privacy">
                 Privacy
-              </a>
+              </Link>
               <span className="mx-1">&middot;</span>
-              <a className="small" href="#!">
+              <Link className="small" to="/terms">
                 Terms
-              </a>
+              </Link>
               <span className="mx-1">&middot;</span>
-              <a className="small" href="#!">
+              <Link className="small" to="/contact">
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
         </div>
