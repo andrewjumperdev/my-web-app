@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { projects } from "../db";
+import CardItem from "../components/CardItem";
 
 const Projects = () => {
-  const [showFullText, setShowFullText] = useState(false);
-
-  useEffect(() => {
-    return () => {
-      setShowFullText(false)
-    };
-  }, []);
   return (
     <>
       <section className="py-5">
@@ -19,32 +13,10 @@ const Projects = () => {
               <span className="text-gradient d-inline">Projects</span>
             </h1>
           </div>
+          <div className="container">
           <div className="row gx-5 justify-content-center">
-              {projects.map((item, index) => (
-                <div className="col-sm-12 col-md-10 col-xl-9 col-xxl-8 overflow-y-hidden">
-                <div key={index} className="card shadow rounded-4 border-0 mb-5">
-                  <div className="card-body p-0">
-                    <div className="d-flex align-items-center">
-                      <div className="mt-5">
-                        <h2 className="fw-bolder">{item.title}</h2>
-                        <p>
-                          {showFullText
-                            ? item.description
-                            : item.description.slice(0, 300) + '...'
-                          }
-                        </p>
-                      </div>
-                      <img
-                        className="img-fluid my-2"
-                        src={item.thumbnail}
-                        alt="Project"
-                      />
-                    </div>
-                  </div>
-                  <Link className="btn btn-primary" to={`/projects/${item.id}`} >Voir détails</Link>
-                </div>
-                </div>
-              ))}
+                <CardItem items={projects} className="col"/>
+          </div>
           </div>
         </div>
       </section>

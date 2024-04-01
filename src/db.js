@@ -13,6 +13,7 @@ export const projects = [
     repository: "https://github.com/Yumi-Lab/YUMI-ID",
     mainTools: ['javascript', 'express', 'multer', 'mocha', 'ejs'],
     technicalDetails: [],
+    date: "2024-03-05"
   },
   {
     id: 2,
@@ -61,6 +62,7 @@ export const projects = [
         `
       }
     ],
+    date: "2023-09-04"
   },
   {
     id: 3,
@@ -117,6 +119,7 @@ export const projects = [
           `
       },
     ],
+    date: "2023-04-01"
   },
   {
     id: 4,
@@ -148,7 +151,8 @@ export const projects = [
 
         ],
       }
-    ]
+    ],
+    date: "2024-05-01"
   },
   {
     id: 5,
@@ -205,7 +209,8 @@ export const projects = [
           `La logique du routeur est réunie dans un seul fichier.`
         ],
       }
-    ]
+    ],
+    date: "2023-05-01"
   },
   {
     id: 6,
@@ -243,6 +248,7 @@ export const projects = [
           `L'utilisation du web scraper doit être éthique et respecter les politiques d'utilisation du site web cible. Il est important de vérifier si le site autorise le scraping et de ne pas surcharger le serveur avec des requêtes excessives.`,
         ],
       },
-    ]
+    ],
+    date: "2024-07-01"
   },
 ];

@@ -1,11 +1,13 @@
 import Header from "../components/Header";
+import RecentsProjects from "../components/RecentsProjects";
 
 const Home = () => {
   return (
-      <div className="d-flex flex-column h-100">
+      <div className="d-flex flex-column">
         <main className="flex-shrink-0">
           <Header />
         </main>
+        <RecentsProjects />
       </div>
   );
 };
