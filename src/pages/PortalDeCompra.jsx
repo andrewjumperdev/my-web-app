@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const PurchasePortal = () => {
   const [currentPage, setCurrentPage] = useState("dev");
@@ -18,9 +19,9 @@ const PurchasePortal = () => {
                 <li>Best practices and optimization</li>
                 <li>Website deployment</li>
               </ol>
-              <a className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="/calender">
+              <Link to="/calender" className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">
                 Reserve a consultation
-              </a>
+              </Link>
               <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">
                 Consultation pack
               </button>
