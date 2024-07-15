@@ -1,20 +1,6 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-
-  const[text, setText] = useState('');
-  
-  useEffect(() => {
-    const changeText = (index) => {
-      const texts = ['Andrew', 'Développeur Web']; 
-      setText(texts[index % texts.length]);
-      setTimeout(() => {
-        changeText(index + 1);
-      }, 4000);
-    };
-    changeText(0);
-  }, []);
 
   return (
       <header className="py-5">
@@ -24,13 +10,14 @@ const Header = () => {
               <div className="text-center text-xxl-start">
                 <div className="badge bg-gradient-primary-to-secondary text-white mb-4">
                   <div className="text-uppercase">
-                    Javascript &middot; React &middot; Node
+                    React &middot; Node  &middot; Express &middot; Mongo
                   </div>
                 </div>
                 <h1 className="overflow-hidden text-start display-3 fw-bolder mb-5">
                   <span className="container__text">
                     <span className="text first-text">Je suis </span> <br/>
-                    <span className="text sec-text">{text}</span>
+                    <span className="text sec-text">Andrew Alfaro</span>
+                    <p className="h5 my-3"> Développeur Fullstack passionné par l'innovation technologique et la création d'interfaces utilisateurs performantes et responsives. Avec plus de 3 ans d'expérience dans le développement web, je suis spécialisé dans la gestion d'API et l'automatisation des processus, et je m'efforce toujours de transformer des idées complexes en solutions pratiques et efficaces.</p>
                   </span>
                 </h1>
                 <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
@@ -41,7 +28,7 @@ const Header = () => {
                     Resume
                   </Link>
                   <Link
-                    className="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder"
+                    className="btn btn-outline-primary btn-lg px-5 py-3 fs-6 fw-bolder"
                     to="/projects"
                   >
                     Projects

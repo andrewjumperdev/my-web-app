@@ -17,6 +17,8 @@ import { projects } from "./db";
 import PageNotFound404 from "./pages/404";
 import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
+import PortalDeCompra from "./pages/PortalDeCompra";
+import CalendarScheduler from "./components/Calender";
 
 function App() {
   const [data, setData] = useState(null);
@@ -117,6 +119,28 @@ function App() {
               </Layout>
             } />
           <Route path="*" element={<PageNotFound404 />} />
+          <Route
+            exact
+            path="/services"
+            element={
+              <Layout>
+                <PageTransition>
+                  <PortalDeCompra />
+                </PageTransition>
+              </Layout>
+            }
+          />
+                    <Route
+            exact
+            path="/calender"
+            element={
+              <Layout>
+                <PageTransition>
+                  <CalendarScheduler />
+                </PageTransition>
+              </Layout>
+            }
+          />
         </Routes>
       )}
     </>

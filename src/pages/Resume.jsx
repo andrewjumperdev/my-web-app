@@ -3,7 +3,7 @@ import ExperienceTimeline from "../components/ExpTimeline";
 
 const Resume = () => {
   const handleDownload = () => {
-    const fileUrl = "/my-web-app/CV-Andrew Alfaro.pdf";
+    const fileUrl = "/my-web-app/Andrew Alfaro.pdf";
     const link = document.createElement("a");
     link.href = fileUrl;
     link.download = "Andrew-Alfaro-CV.pdf";
@@ -31,9 +31,11 @@ const Resume = () => {
       date: 'juin 2022 - juin 2023',
       location: "France, Paris",
       description: `
-      Gestion des plateformes Lengow et Prestashop afin de mettre en ligne et synchroniser les produits Bobochic sur divers marketplace 
-      Construction et maintenance des scripts d'automatisation en utilisant JavaScript pour améliorer les processus internes de la gestion des stocks, des mises à jour des prix et des caractéristiques produits
-      Conception d’un webscraper avec Python pour analyser l’état des produits tels que le prix, la disponibilité des stocks et les caractéristiques
+        Pendant mon temps chez Bobochic, j'ai développé un web scraper pour des études de benchmark en utilisant la base de données PrestaShop. 
+        J'ai automatisé les processus d'injection automatique des données produits et vérifié les erreurs potentielles, ce qui a permis de 
+        gagner un temps précieux et de garantir l'exactitude des données. De plus, j'ai créé des scripts Python pour automatiser les tâches 
+        répétitives, permettant ainsi à l'équipe de se concentrer sur des missions plus stratégiques. J'ai également collaboré étroitement avec
+         les équipes de marketing et de ventes pour optimiser les processus de gestion des produits.
       `
     },
     {
