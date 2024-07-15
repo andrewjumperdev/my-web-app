@@ -1,114 +1,136 @@
-import React, { useState, useEffect } from "react";
-import { gapi } from "gapi-script";
+import React, { useState, useEffect } from 'react';
+import { gapi } from 'gapi-script';
+import CalendarPicker from 'react-calendar';
 
-const SCHEDULING_SCOPES = "https://www.googleapis.com/auth/calendar.events";
-const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
-const API_KEY = import.meta.env.VITE_API_KEY;
+const CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+const SCOPES = "https://www.googleapis.com/auth/calendar.events";
 
-const CalendarScheduler = () => {
+const Calendar = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
-  const [eventData, setEventData] = useState({
-    summary: "",
-    location: "",
-    description: "",
-    start: "",
-    end: "",
-  });
-
+  const [selectedDateTime, setSelectedDateTime] = useState(null);
+  const [eventCreated, setEventCreated] = useState(false);
+  
   useEffect(() => {
-    const start = () => {
+    const initClient = () => {
       gapi.client.init({
         apiKey: API_KEY,
         clientId: CLIENT_ID,
-        scope: SCHEDULING_SCOPES,
+        discoveryDocs: DISCOVERY_DOCS,
+        scope: SCOPES,
       }).then(() => {
         const authInstance = gapi.auth2.getAuthInstance();
-        setIsSignedIn(authInstance.isSignedIn.get());
-        authInstance.isSignedIn.listen(setIsSignedIn);
+        if (authInstance) {
+          setIsSignedIn(authInstance.isSignedIn.get());
+          authInstance.isSignedIn.listen(setIsSignedIn);
+          if (!authInstance.isSignedIn.get()) {
+            authInstance.signIn();
+          }
+        } else {
+          console.error('Auth instance not initialized');
+        }
+      }).catch(error => {
+        console.error("Error initializing gapi client: ", error);
       });
     };
-    gapi.load("client:auth2", start);
+
+    gapi.load('client:auth2', initClient);
   }, []);
 
-  const handleAuthClick = () => {
-    gapi.auth2.getAuthInstance().signIn();
+  const handleSignIn = () => {
+    const authInstance = gapi.auth2.getAuthInstance();
+    if (authInstance) {
+      authInstance.signIn().then(() => {
+        setIsSignedIn(true);
+      }).catch(error => {
+        console.error('Error signing in: ', error);
+      });
+    } else {
+      console.error('Auth instance not initialized');
+    }
   };
 
-  const handleSignoutClick = () => {
-    gapi.auth2.getAuthInstance().signOut();
-  };
+  const openGoogleCalendarPicker = () => {
+    if (!isSignedIn) {
+      console.error('User is not signed in.');
+      return;
+    }
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setEventData({ ...eventData, [name]: value });
-  };
+    if (!selectedDateTime) {
+      console.error('Please select both date and time.');
+      return;
+    }
 
-  const handleScheduleClick = (e) => {
-    e.preventDefault();
+    const startDateTime = new Date(selectedDateTime);
+    const endDateTime = new Date(startDateTime);
+    endDateTime.setHours(endDateTime.getHours() + 1); // Ajusta la hora de finalización
+
     const event = {
-      summary: eventData.summary,
-      location: eventData.location,
-      description: eventData.description,
-      start: {
-        dateTime: eventData.start,
-        timeZone: "America/Los_Angeles",
+      'summary': 'Scheduled Consultation',
+      'description': 'Scheduled Consultation',
+      'start': {
+        'dateTime': startDateTime.toISOString(),
+        'timeZone': 'America/Los_Angeles'
       },
-      end: {
-        dateTime: eventData.end,
-        timeZone: "America/Los_Angeles",
-      },
-      attendees: [{ email: "correo@ejemplo.com" }],
-      reminders: {
-        useDefault: false,
-        overrides: [
-          { method: "email", minutes: 24 * 60 },
-          { method: "popup", minutes: 10 },
-        ],
+      'end': {
+        'dateTime': endDateTime.toISOString(),
+        'timeZone': 'America/Los_Angeles'
       },
     };
 
     gapi.client.calendar.events.insert({
-      calendarId: "primary",
-      resource: event,
-    }).execute(event => {
-      console.log("Event created: ", event.htmlLink);
+      'calendarId': 'primary',
+      'resource': event,
+    }).then(response => {
+      console.log('Event created: ', response);
+      setEventCreated(true);
+    }).catch(error => {
+      console.error('Error creating event: ', error);
     });
   };
 
+  const handleDateTimeChange = date => {
+    setSelectedDateTime(date);
+  };
+
   return (
-    <div>
-      {!isSignedIn ? (
-        <button onClick={handleAuthClick}>Sign in with Google</button>
-      ) : (
-        <>
-          <button onClick={handleSignoutClick}>Sign out</button>
-          <form onSubmit={handleScheduleClick}>
-            <label>
-              Event Summary:
-              <input type="text" name="summary" value={eventData.summary} onChange={handleInputChange} required />
-            </label>
-            <label>
-              Location:
-              <input type="text" name="location" value={eventData.location} onChange={handleInputChange} required />
-            </label>
-            <label>
-              Description:
-              <input type="text" name="description" value={eventData.description} onChange={handleInputChange} required />
-            </label>
-            <label>
-              Start Date and Time:
-              <input type="datetime-local" name="start" value={eventData.start} onChange={handleInputChange} required />
-            </label>
-            <label>
-              End Date and Time:
-              <input type="datetime-local" name="end" value={eventData.end} onChange={handleInputChange} required />
-            </label>
-            <button type="submit">Schedule Event</button>
-          </form>
-        </>
-      )}
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-12 col-md-8">
+          {!eventCreated ? (
+            <>
+              {isSignedIn ? (
+                <>
+                  <div className="mb-4">
+                    <CalendarPicker
+                      onChange={handleDateTimeChange}
+                      value={selectedDateTime}
+                      minDate={new Date()} 
+                      calendarType="ISO 8601"
+                    />
+                  </div>
+                  {selectedDateTime && (
+                    <button className='btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder' onClick={openGoogleCalendarPicker}>
+                      Schedule Meeting
+                    </button>
+                  )}
+                </>
+              ) : (
+                <button className='btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder' onClick={handleSignIn}>
+                  Sign in with Google
+                </button>
+              )}
+            </>
+          ) : (
+            <div className="alert alert-success mt-4" role="alert">
+              Meeting scheduled successfully!
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default CalendarScheduler;
+export default Calendar;

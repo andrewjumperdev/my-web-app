@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import 'react-datepicker/dist/react-datepicker.css';
 
 import { Route, Routes } from "react-router";
 import PageTransition from "./components/PageTransition";
@@ -19,6 +20,7 @@ import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import PortalDeCompra from "./pages/PortalDeCompra";
 import CalendarScheduler from "./components/Calender";
+import ScheduleConsultation from "./components/Reserva";
 
 function App() {
   const [data, setData] = useState(null);
@@ -136,7 +138,7 @@ function App() {
             element={
               <Layout>
                 <PageTransition>
-                  <CalendarScheduler />
+                  <ScheduleConsultation />
                 </PageTransition>
               </Layout>
             }
