@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
                 <p>
                     En tant que développeur freelance et consultant, j'offre des services personnalisés pour répondre à vos besoins technologiques. Que vous ayez besoin de développement web, d'automatisation de processus ou de conseils en stratégie technologique, je suis là pour vous aider à atteindre vos objectifs.
                 </p>
-                <a href="/services">En savoir plus</a>
+                <Link to="/services">En savoir plus</Link>
             </div>
         </section>
           </div>
