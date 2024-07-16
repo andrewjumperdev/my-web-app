@@ -948,7 +948,7 @@ const PurchasePortal = () => {
 
   return (
     <>
-      <nav className="mx-5">
+      <div className="mx-5">
         <ul className="pagination">
           <li className="page-item">
             <button className="page-link" onClick={() => setCurrentPage("dev")}>
@@ -969,7 +969,7 @@ const PurchasePortal = () => {
             </button>
           </li>
         </ul>
-      </nav>
+      </div>
       {renderPage()}
     </>
   );
