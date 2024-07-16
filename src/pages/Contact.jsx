@@ -1,6 +1,41 @@
 import React from "react";
 
 const Contact = () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+
+    try {
+      const response = await fetch(
+        "https://us-central1-silver-origin-413715.cloudfunctions.net/submitContactForm",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.get("name"),
+            email: formData.get("email"),
+            phone: formData.get("phone"),
+            message: formData.get("message"),
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Error submitting form");
+      }
+
+      const data = await response.json();
+      console.log("Form submission successful:", data);
+      // Aquí podrías mostrar un mensaje de éxito o redireccionar a una página de confirmación
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // Aquí podrías mostrar un mensaje de error al usuario
+    }
+  };
+
   return (
     <section className="p-sm-0 md-py-5">
       <div className="container px-5">
@@ -10,24 +45,24 @@ const Contact = () => {
               <i className="bi bi-envelope"></i>
             </div>
             <h1 className="fw-bolder">Get in touch</h1>
-            <p className="lead fw-normal text-muted mb-0">Let's work together!</p>
+            <p className="lead fw-normal text-muted mb-0">
+              Let's work together!
+            </p>
           </div>
           <div className="row gx-5 justify-content-center">
             <div className="col-lg-8 col-xl-6">
-              <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+              <form onSubmit={handleSubmit} id="contactForm">
                 <div className="form-floating mb-3">
                   <input
                     className="form-control"
                     id="name"
+                    name="name"
                     type="text"
                     placeholder="Enter your name..."
-                    data-sb-validations="required"
+                    required
                   />
                   <label htmlFor="name">Full name</label>
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="name:required"
-                  >
+                  <div className="invalid-feedback">
                     A name is required.
                   </div>
                 </div>
@@ -36,19 +71,14 @@ const Contact = () => {
                   <input
                     className="form-control"
                     id="email"
+                    name="email"
                     type="email"
                     placeholder="name@example.com"
-                    data-sb-validations="required,email"
+                    required
                   />
                   <label htmlFor="email">Email address</label>
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="email:required"
-                  >
+                  <div className="invalid-feedback">
                     An email is required.
-                  </div>
-                  <div className="invalid-feedback" data-sb-feedback="email:email">
-                    Email is not valid.
                   </div>
                 </div>
 
@@ -56,15 +86,13 @@ const Contact = () => {
                   <input
                     className="form-control"
                     id="phone"
+                    name="phone"
                     type="tel"
                     placeholder="(123) 456-7890"
-                    data-sb-validations="required"
+                    required
                   />
                   <label htmlFor="phone">Phone number</label>
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="phone:required"
-                  >
+                  <div className="invalid-feedback">
                     A phone number is required.
                   </div>
                 </div>
@@ -73,42 +101,18 @@ const Contact = () => {
                   <textarea
                     className="form-control"
                     id="message"
-                    type="text"
+                    name="message"
                     placeholder="Enter your message here..."
-                    data-sb-validations="required"
+                    required
                   ></textarea>
                   <label htmlFor="message">Message</label>
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="message:required"
-                  >
+                  <div className="invalid-feedback">
                     A message is required.
                   </div>
                 </div>
 
-                <div className="d-none" id="submitSuccessMessage">
-                  <div className="text-center mb-3">
-                    <div className="fw-bolder">Form submission successful!</div>
-                    To activate this form, sign up at
-                    <br />
-                    <a href="https://startbootstrap.com/solution/contact-forms">
-                      https://startbootstrap.com/solution/contact-forms
-                    </a>
-                  </div>
-                </div>
-
-                <div className="d-none" id="submitErrorMessage">
-                  <div className="text-center text-danger mb-3">
-                    Error sending message!
-                  </div>
-                </div>
-
                 <div className="d-grid">
-                  <button
-                    className="btn btn-primary btn-lg disabled"
-                    id="submitButton"
-                    type="submit"
-                  >
+                  <button className="btn btn-primary btn-lg" type="submit">
                     Submit
                   </button>
                 </div>

@@ -27,7 +27,7 @@ const PurchasePortal = () => {
               >
                 Reserve a consultation
               </Link>
-              <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">
+              <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" disabled>
                 Consultation pack
               </button>
             </div>
@@ -327,7 +327,7 @@ const PurchasePortal = () => {
               <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">
                 Reserve a consultation
               </button>
-              <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">
+              <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" disabled>
                 Consultation pack
               </button>
             </div>
@@ -642,7 +642,7 @@ const PurchasePortal = () => {
               form:
             </p>
             <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">Reserve a consultation</button>
-            <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">Consultation pack</button>
+            <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" disabled>Consultation pack </button>
             <br />
             </div>
             <div className="container-fluid mt-4">
