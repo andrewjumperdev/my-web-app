@@ -2,10 +2,9 @@ import React from "react";
 
 const About = () => {
   return (
-    <section className="bg-light py-5">
-      <div className="container px-5">
-        <div className="row gx-5 justify-content-center">
-          <div className="col-xxl-8 col-sm-12">
+    <section className="container bg-light">
+        <div className="row justify-content-center">
+          <div className="col-xxl-12 col-sm-12">
             <div className="text-center my-5">
               <h2 className="display-5 fw-bolder">
                 <span className="text-gradient d-inline">À propos de moi</span>
@@ -52,7 +51,6 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 };

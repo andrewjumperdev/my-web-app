@@ -4,9 +4,9 @@ const Header = () => {
 
   return (
       <header className="py-5">
-        <div className="container px-5 pb-5">
+        <div className="container px-sm-1 px-md-5 pb-5">
           <div className="row gx-5 align-items-center">
-            <div className="col-md-6 col-lg-7">
+            <div className="col-sm-12 col-md-6 col-lg-7">
               <div className="text-center text-xxl-start">
                 <div className="badge bg-gradient-primary-to-secondary text-white mb-4">
                   <div className="text-uppercase">

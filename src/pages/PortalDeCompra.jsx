@@ -8,7 +8,7 @@ const PurchasePortal = () => {
     switch (currentPage) {
       case "dev":
         return (
-          <section id="dev" className="p-5">
+          <section id="dev" className="">
             <div className="container-fluid">
               <h2 className="text-gradient p-2">Development</h2>
               <p className="px-3">
@@ -27,11 +27,8 @@ const PurchasePortal = () => {
               >
                 Reserve a consultation
               </Link>
-              <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" disabled>
-                Consultation pack
-              </button>
             </div>
-            <div className="accordion p-4" id="accordionExample">
+            <div className="accordion p-2" id="accordionExample">
               <div className="accordion-item">
                 <h2 className="accordion-header" id="headingOne">
                   <button
@@ -317,7 +314,7 @@ const PurchasePortal = () => {
         );
       case "fit":
         return (
-          <section id="fit" className="p-5">
+          <section id="fit" className="">
             <div className="container-fluid">
               <h2 className="text-gradient p-2">Fitness</h2>
               <p className="py-3">
@@ -326,9 +323,6 @@ const PurchasePortal = () => {
               </p>
               <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">
                 Reserve a consultation
-              </button>
-              <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" disabled>
-                Consultation pack
               </button>
             </div>
             <br />
@@ -634,7 +628,7 @@ const PurchasePortal = () => {
         );
       case "hire-me":
         return (
-          <section id="hire-me" className="p-5">
+          <section id="hire-me" className="">
             <div className="container-fluid">
             <h2 className="text-gradient p-2">Hire Me</h2>
             <p className="py-3">
@@ -642,7 +636,6 @@ const PurchasePortal = () => {
               form:
             </p>
             <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">Reserve a consultation</button>
-            <button className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" disabled>Consultation pack </button>
             <br />
             </div>
             <div className="container-fluid mt-4">
@@ -947,9 +940,9 @@ const PurchasePortal = () => {
   };
 
   return (
-    <>
-      <div className="mx-5">
-        <ul className="pagination">
+
+      <div className="container">
+        <ul className="container pagination">
           <li className="page-item">
             <button className="page-link" onClick={() => setCurrentPage("dev")}>
               Development
@@ -969,9 +962,8 @@ const PurchasePortal = () => {
             </button>
           </li>
         </ul>
+        {renderPage()}
       </div>
-      {renderPage()}
-    </>
   );
 };
 
